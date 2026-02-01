@@ -10,7 +10,7 @@ if (-not $isAdmin) {
         -ArgumentList "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`"" `
         -Verb RunAs
 
-    exit
+    
 }
 
 
