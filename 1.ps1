@@ -14,7 +14,7 @@ exit
 }
 
 
-$path = "C:\$env:TEMP\WindowsUpdate"
+$path = "$env:TEMP\WindowsUpdate"
 
 if (!(Test-Path $path)) {
     New-Item -ItemType Directory -Path $path -Force
