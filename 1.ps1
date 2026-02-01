@@ -9,7 +9,7 @@ if (-not $isAdmin) {
     Start-Process powershell `
         -ArgumentList "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`"" `
         -Verb RunAs
-
+exit
     
 }
 
